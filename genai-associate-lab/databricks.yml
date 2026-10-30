@@ -1,0 +1,26 @@
+# Databricks Asset Bundle (extensions §F). Deploy: databricks bundle deploy -t dev
+# Free Edition has no account-level features, so only a workspace-level job is shown.
+bundle:
+  name: nimbus-genai-lab
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://<your-free-edition-workspace>.cloud.databricks.com
+
+resources:
+  jobs:
+    refresh_knowledge_base:
+      name: refresh-knowledge-base
+      tasks:
+        - task_key: ingest_and_chunk
+          notebook_task:
+            notebook_path: notebooks/02_ingest_and_chunk.py
+        - task_key: sync_index
+          depends_on:
+            - task_key: ingest_and_chunk
+          notebook_task:
+            notebook_path: notebooks/03_vector_search.py
+      # Serverless compute is implied for notebook tasks with no cluster spec.

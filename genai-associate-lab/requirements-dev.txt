@@ -1,0 +1,8 @@
+pytest
+pypdf
+beautifulsoup4
+reportlab
+mlflow>=3
+databricks-sdk
+databricks-ai-search
+pandas

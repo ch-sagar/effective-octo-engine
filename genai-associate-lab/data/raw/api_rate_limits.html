@@ -1,0 +1,18 @@
+<!doctype html><html><head><title>Rate limits</title><script>var track=1;</script><style>.x{}</style></head>
+<body>
+<nav><a href="/">Home</a> <a href="/pricing">Pricing</a> <a href="/docs">Docs</a> Subscribe to our newsletter</nav>
+<header>Nimbus Cloud Documentation</header>
+<main>
+<h1>API Rate Limits</h1>
+<h2>Limits per plan</h2>
+<p>Free plan: 5 requests per second. Pro plan: 50 requests per second. Enterprise plan: 500 requests per second, with burst up to 1,000 for 10 seconds.</p>
+<h2>Handling 429 responses</h2>
+<p>When you exceed the limit the API returns HTTP 429 with a Retry-After header. Use exponential backoff starting at 1 second with jitter. Do not retry immediately in a tight loop.</p>
+<h2>Request size</h2>
+<p>The maximum request body is 1 MB on Free and Pro, and 10 MB on Enterprise. Larger bodies return HTTP 413.</p>
+<h2>Timeouts</h2>
+<p>All requests time out after 30 seconds. Long-running jobs should use the asynchronous /v1/jobs endpoint instead.</p>
+</main>
+<aside>Related posts: 10 tips for scaling</aside>
+<footer>Cookie settings. &copy; 2026 Nimbus Cloud. All rights reserved. Share on Twitter</footer>
+</body></html>

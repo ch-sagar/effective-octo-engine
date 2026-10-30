@@ -1,0 +1,8 @@
+doc_id,license,owner,approved_for_rag,notes
+billing_policy,internal,Nimbus Cloud,yes,Own content
+onboarding_guide,internal,Nimbus Cloud,yes,Own content
+incident_postmortem_2026_03,internal-confidential,Nimbus Cloud,no,Contains staff PII; internal only -- exclude from customer-facing RAG
+latency_benchmark,all-rights-reserved,Third party,no,No redistribution/commercial reuse licence -- exclude
+api_rate_limits,internal,Nimbus Cloud,yes,Own content
+faq,internal,Nimbus Cloud,yes,Own content
+security_whitepaper,internal,Nimbus Cloud,yes,Own content
